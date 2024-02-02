@@ -1,5 +1,5 @@
 # form/views.py
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import add_data
 from .quotes import get_random_quote
 
