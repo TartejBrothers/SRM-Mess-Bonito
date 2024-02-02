@@ -10,13 +10,19 @@
   <body>
     <div class="main">
       <div class="header">
-        <h1>SRM Mess Mutter</h1>
-        <div class="forms">
-          <form method="POST">
-            {% csrf_token %} {{form.as_p}}
-            <input type="submit" value="Save" id="savebutton" />
-          </form>
-        </div>
+        <img src="{% static 'images/logo.png' %}" />
+        <h1>Mess Mutter</h1>
+      </div>
+      <div class="forms">
+        <form method="POST">
+          {% csrf_token %} {{form.as_p}}
+          <input
+            type="submit"
+            value="Save"
+            id="savebutton"
+            class="formsubmit"
+          />
+        </form>
       </div>
     </div>
   </body>

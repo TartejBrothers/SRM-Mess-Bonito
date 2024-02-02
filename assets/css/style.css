@@ -9,10 +9,21 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.header img {
+  width: 100px;
+}
 .header h1 {
   font-size: 60px;
   font-weight: 500;
   text-align: center;
+  padding: 0 20px;
 }
 
 .main {
@@ -29,11 +40,26 @@ html {
   justify-content: center;
   flex-direction: column;
   margin: 20px;
+  width: 80%;
+  background-color: #171717;
 }
 .forms form {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-
+  color: #f6f6f6;
   width: 100%;
+}
+.formsubmit {
+  background-color: #5b8266;
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
+  color: #f6f6f6;
+}
+
+@media screen and (max-width: 1000px) {
+  .header h1 {
+    font-size: 40px;
+  }
 }
