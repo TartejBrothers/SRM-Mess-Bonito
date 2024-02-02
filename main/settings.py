@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "import_export",
     "django.contrib.staticfiles",
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 MIDDLEWARE = [
@@ -117,3 +119,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
