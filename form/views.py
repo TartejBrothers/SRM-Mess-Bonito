@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from .forms import add_data
 from .quotes import get_random_quote
+from .models import Details
 
 
 def index(request):
@@ -18,3 +19,9 @@ def success(request):
     quote_text, quote_author = get_random_quote()
     context = {"quote_text": quote_text, "quote_author": quote_author}
     return render(request, "success.html", context)
+
+
+def results(request):
+    num_rows = Details.objects.count()
+    context = {"num_rows": num_rows}
+    return render(request, "results.html", context)
