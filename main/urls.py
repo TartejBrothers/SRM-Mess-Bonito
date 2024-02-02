@@ -8,7 +8,8 @@ from form import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
-    path("success", views.success, name="success"),
+    path("success/", views.success, name="success"),
+    path("results/", views.results, name="results"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
