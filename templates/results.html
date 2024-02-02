@@ -1,10 +1,18 @@
-
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Results</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/success.css' %}" />
+    <title>Database Count</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" />
   </head>
   <body>
-    <h1>Number of Rows in the Database: {{ num_rows }}</h1>
+    <div class="main">
+      <div class="center">
+        <p>Number of People Coming to Mess today: {{ num_rows }}</p>
+      </div>
+    </div>
   </body>
 </html>
