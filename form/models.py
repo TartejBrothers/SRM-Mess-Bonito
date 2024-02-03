@@ -15,8 +15,6 @@ class Details(models.Model):
 
     def save(self, *args, **kwargs):
         self.date = datetime.now().date()
-        self.time = datetime.now().time()
-        print(self.date, self.time)
         last_record = Details.objects.last()
         if last_record and last_record.date != self.date:
             Details.objects.all().delete()
