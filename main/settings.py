@@ -16,9 +16,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "*"]
 
-WSGI_APPLICATION = "vercel_app.wsgi.app"
-# Application definition
-
 INSTALLED_APPS = [
     "form",
     "django.contrib.admin",
