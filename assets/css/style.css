@@ -70,17 +70,31 @@ html {
   text-align: center;
   color: #000000;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 .menu h2 {
   background-color: #5b8266;
 }
 .menu h3 {
+  margin-top: 10px;
   background-color: #f6f6f6;
 }
 
 .menu ul {
   list-style-type: none;
+}
+.menu ul li {
+  text-align: center;
+  color: #f6f6f6;
+  padding: 5px;
+  background-color: #2b2c28;
+}
+.menu ul li:nth-child(1) {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.menu ul li:nth-last-child(1) {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 @media screen and (max-width: 1000px) {
   .header h1 {
