@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from .forms import add_data
 from .quotes import get_random_quote
+from django.http import HttpResponse, HttpResponseRedirect, request
 from .models import Details
 
 from datetime import datetime
@@ -112,7 +113,7 @@ def index(request):
     if form.is_valid():
         form.save()
         form = add_data()
-        return redirect("success")
+        return HttpResponseRedirect("../success/")
     dict5 = {"form": form}
     current_day_menu = menu[day]
     flattened_menu = []
@@ -134,5 +135,14 @@ def success(request):
 
 def results(request):
     num_rows = Details.objects.count()
-    context = {"num_rows": num_rows}
+
+    lunch_yes_count = Details.objects.filter(lunch="Yes").count()
+    dinner_yes_count = Details.objects.filter(dinner="Yes").count()
+
+    context = {
+        "num_rows": num_rows,
+        "lunch_yes_count": lunch_yes_count,
+        "dinner_yes_count": dinner_yes_count,
+    }
+
     return render(request, "results.html", context)
