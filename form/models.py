@@ -20,3 +20,4 @@ class Details(models.Model):
             Details.objects.all().delete()
 
         super().save(*args, **kwargs)
+    
