@@ -4,7 +4,7 @@ from .models import Details
 
 
 class DetailsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ("date", "time", "get_lunch", "get_dinner")
+    list_display = ("email", "date", "time", "get_lunch", "get_dinner")
 
     def get_lunch(self, obj):
         return obj.lunch
