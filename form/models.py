@@ -8,6 +8,7 @@ options = (
 
 
 class Details(models.Model):
+    email = models.EmailField(max_length=254)
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
     lunch = models.CharField(max_length=35, choices=options)
@@ -20,4 +21,3 @@ class Details(models.Model):
             Details.objects.all().delete()
 
         super().save(*args, **kwargs)
-    
