@@ -6,10 +6,8 @@ from django.forms import ModelForm, TextInput, EmailInput, NumberInput, CharFiel
 class add_data(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(add_data, self).__init__(*args, **kwargs)
-        self.fields["lunch"].initial = "Yes"  # Set 'Yes' as the default for lunch
-        self.fields["dinner"].initial = "Yes"  # Set 'Yes' as the default for dinner
-
-        # Remove the empty option from the choices
+        self.fields["lunch"].initial = "Yes"
+        self.fields["dinner"].initial = "Yes"
         self.fields["lunch"].choices = [("Yes", "Yes"), ("No", "No")]
         self.fields["dinner"].choices = [("Yes", "Yes"), ("No", "No")]
 
