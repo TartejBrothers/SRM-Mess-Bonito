@@ -96,6 +96,43 @@ html {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+/* Add this CSS to your stylesheet or <style> tag in HTML */
+.horizontal-radio {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  /* Align items vertically */
+}
+
+.horizontal-radio label {
+  margin-right: 20px;
+}
+.horizontal-radio input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.horizontal-radio input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Adjust the size of the custom radio button */
+  height: 20px; /* Adjust the size of the custom radio button */
+  border: 2px solid #aaa; /* Border color of the custom radio button */
+  border-radius: 4px; /* Adjust the border-radius to make it square */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.horizontal-radio input[type="radio"]:checked + label:before {
+  background-color: green; /* Change the background color when checked */
+}
+
+.horizontal-radio input[type="radio"] {
+  display: inline-block; /* Display radio button as inline block */
+  margin-right: 5px; /* Adjust the spacing between radio buttons and text */
+}
+
 @media screen and (max-width: 1000px) {
   .header h1 {
     font-size: 40px;

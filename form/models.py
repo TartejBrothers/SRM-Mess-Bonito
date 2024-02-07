@@ -19,5 +19,4 @@ class Details(models.Model):
         last_record = Details.objects.last()
         if last_record and last_record.date != self.date:
             Details.objects.all().delete()
-
         super().save(*args, **kwargs)
