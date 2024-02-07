@@ -96,6 +96,41 @@ html {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+.horizontal-radio {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.horizontal-radio label {
+  margin-right: 20px;
+}
+.horizontal-radio input[type="radio"] {
+  display: none;
+}
+
+.horizontal-radio input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px; 
+  border: 2px solid #aaa;
+  border-radius: 4px; 
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.horizontal-radio input[type="radio"]:checked + label:before {
+  background-color: green; 
+}
+
+.horizontal-radio input[type="radio"] {
+  display: inline-block; 
+  margin-right: 5px; 
+}
+
 @media screen and (max-width: 1000px) {
   .header h1 {
     font-size: 40px;
