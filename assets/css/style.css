@@ -13,8 +13,30 @@ html {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
   align-items: center;
+  color: #ffffff;
   padding-top: 20px;
+  background: rgb(29, 77, 202);
+  background: linear-gradient(
+    90deg,
+    rgba(29, 77, 202, 1) 0%,
+    rgba(112, 20, 167, 1) 100%
+  );
+  padding: 20px;
+}
+.header h3 {
+  background-color: #5383ff;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.header p {
+  background-color: #5383ff;
+  padding: 7px 20px;
+  font-weight: 200;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .header img {
   width: 100px;
@@ -114,21 +136,21 @@ html {
   content: "";
   display: inline-block;
   width: 20px;
-  height: 20px; 
+  height: 20px;
   border: 2px solid #aaa;
-  border-radius: 4px; 
+  border-radius: 4px;
   position: absolute;
   left: 0;
   top: 0;
 }
 
 .horizontal-radio input[type="radio"]:checked + label:before {
-  background-color: green; 
+  background-color: green;
 }
 
 .horizontal-radio input[type="radio"] {
-  display: inline-block; 
-  margin-right: 5px; 
+  display: inline-block;
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 1000px) {
