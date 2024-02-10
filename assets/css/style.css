@@ -1,13 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url(https://db.onlinewebfonts.com/c/b851561fd22deabc04e65e994e257e51?family=Pragmatica+W01+Extended);
 html {
   scroll-behavior: smooth;
   background-color: #f6f6f6;
+  background-image: url("../images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  /* font-family: "Pragmatica W01 Extended"; */
 }
 .header {
   display: flex;
@@ -17,12 +24,12 @@ html {
   align-items: center;
   color: #ffffff;
   padding-top: 20px;
-  background: rgb(29, 77, 202);
+  /* background: rgb(29, 77, 202);
   background: linear-gradient(
     90deg,
     rgba(29, 77, 202, 1) 0%,
     rgba(112, 20, 167, 1) 100%
-  );
+  ); */
   padding: 20px 20px 40px 20px;
   z-index: 1;
 }
@@ -45,7 +52,7 @@ html {
 }
 .header h1 {
   font-size: 60px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
   padding: 0 20px;
 }
@@ -66,7 +73,7 @@ html {
   justify-content: center;
   flex-direction: column;
   margin: -20px 20px 20px 20px;
-  width: 80%;
+  width: 90%;
   background-color: #ffffff;
   color: #000000;
 }
@@ -76,10 +83,8 @@ html {
   flex-direction: column;
   color: #000000;
   border-radius: 10px;
-  border: 2px solid #c12ce9;
   width: 100%;
   text-transform: uppercase;
-  padding: 10px;
   font-weight: 600;
 }
 .formsubmit {
@@ -160,12 +165,32 @@ html {
 }
 
 #id_lunch div {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   width: 40%;
   border-radius: 20px;
-  border: 1px solid #000000;
+  padding: 5px 10px;
+  border: 1px solid #c12ce9;
 }
 #id_lunch div label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#id_dinner {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#id_dinner div {
+  background-color: #ffffff;
+  width: 40%;
+  border-radius: 20px;
+  padding: 5px 10px;
+  border: 1px solid #c12ce9;
+}
+#id_dinner div label {
   width: 100%;
   display: flex;
   justify-content: center;
