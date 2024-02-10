@@ -23,14 +23,14 @@
           {% csrf_token %} {{form.as_p}}
           <input
             type="submit"
-            value="Save"
+            value="Submit Vote"
             id="savebutton"
             class="formsubmit"
           />
         </form>
       </div>
       <div class="menu">
-        <h2 class="menuheader">MENU</h2>
+        <!-- <h2 class="menuheader">MENU</h2> -->
         <ul>
           {% for meal, item in data.menu %}
             {% ifchanged meal %}
