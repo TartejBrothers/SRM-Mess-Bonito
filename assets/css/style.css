@@ -153,7 +153,24 @@ html {
   left: 0;
   top: 0;
 }
+#id_lunch {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
+#id_lunch div {
+  background-color: #f6f6f6;
+  width: 40%;
+  border-radius: 20px;
+  border: 1px solid #000000;
+}
+#id_lunch div label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .horizontal-radio input[type="radio"]:checked + label:before {
   background-color: green;
 }

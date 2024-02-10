@@ -25,6 +25,7 @@ class add_data(forms.ModelForm):
             "lunch": forms.RadioSelect(
                 attrs={
                     "class": "horizontal-radio",
+                    "style": "display: none",  # Hide the default radio buttons
                 },
                 choices=(
                     ("Yes", "Yes"),
@@ -34,6 +35,7 @@ class add_data(forms.ModelForm):
             "dinner": forms.RadioSelect(
                 attrs={
                     "class": "horizontal-radio",
+                    "style": "display: none",  # Hide the default radio buttons
                 },
                 choices=(
                     ("Yes", "Yes"),
