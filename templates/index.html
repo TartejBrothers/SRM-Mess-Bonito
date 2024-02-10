@@ -49,5 +49,41 @@
       </div>
       
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var lunchDivs = document.querySelectorAll('#id_lunch div');
+    
+        lunchDivs.forEach(function(div) {
+          div.addEventListener('click', function() {
+            lunchDivs.forEach(function(d) {
+              d.style.background = '#f6f6f6'; 
+            });
+            div.style.background = 'rgb(255,52,50)';
+            div.style.background = '-moz-linear-gradient(90deg, rgba(255,52,50,1) 0%, rgba(252,143,83,1) 100%)';
+            div.style.background = '-webkit-linear-gradient(90deg, rgba(255,52,50,1) 0%, rgba(252,143,83,1) 100%)';
+            div.style.background = 'linear-gradient(90deg, rgba(255,52,50,1) 0%, rgba(252,143,83,1) 100%)';
+            div.style.filter = 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff3432",endColorstr="#fc8f53",GradientType=1)';
+          });
+        });
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        var dinnerDivs = document.querySelectorAll('#id_dinner div');
+    
+        dinnerDivs.forEach(function(div) {
+          div.addEventListener('click', function() {
+            dinnerDivs.forEach(function(d) {
+              d.style.background = '#f6f6f6'; 
+            });
+            div.style.background = 'rgb(255,52,50)';
+            div.style.background = '-moz-linear-gradient(90deg, rgba(255,52,50,1) 0%, rgba(252,143,83,1) 100%)';
+            div.style.background = '-webkit-linear-gradient(90deg, rgba(255,52,50,1) 0%, rgba(252,143,83,1) 100%)';
+            div.style.background = 'linear-gradient(90deg, rgba(255,52,50,1) 0%, rgba(252,143,83,1) 100%)';
+            div.style.filter = 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff3432",endColorstr="#fc8f53",GradientType=1)';
+          });
+        });
+      });
+    </script>
+    
+    
   </body>
 </html>

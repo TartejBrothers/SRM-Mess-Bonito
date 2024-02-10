@@ -19,12 +19,13 @@ class add_data(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "placeholder": "SRM ID (AB1234)",
-                    "style": "background:#ffffff; margin-bottom:20px; border: 1px solid #0000000;width:calc(100% - 150px); font-size:16px;color: black; opacity:1; padding:5px 10px;  border-radius:10px",
+                    "style": "background:#ffffff; margin-bottom:20px; border: 1px solid #0000000;width:calc(100% - 130px); font-size:16px;color: black; opacity:1; padding:5px 10px;  border-radius:10px",
                 },
             ),
             "lunch": forms.RadioSelect(
                 attrs={
                     "class": "horizontal-radio",
+                    "style": "display: none",  # Hide the default radio buttons
                 },
                 choices=(
                     ("Yes", "Yes"),
@@ -34,6 +35,7 @@ class add_data(forms.ModelForm):
             "dinner": forms.RadioSelect(
                 attrs={
                     "class": "horizontal-radio",
+                    "style": "display: none",  # Hide the default radio buttons
                 },
                 choices=(
                     ("Yes", "Yes"),
