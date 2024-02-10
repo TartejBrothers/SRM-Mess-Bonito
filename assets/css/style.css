@@ -3,7 +3,7 @@
 html {
   scroll-behavior: smooth;
   background-color: #f6f6f6;
-  background-image: url("../images/bg.png");
+  background-image: url("../images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -88,13 +88,20 @@ html {
   font-weight: 600;
 }
 .formsubmit {
-  background-color: #5b8266;
-  border: none;
+  background-color: #ffffff;
+  border: 2px solid #c12ce9;
   border-radius: 20px;
-  padding: 5px;
+  margin: 40px auto 0px auto;
+  width: 50%;
+  padding: 10px;
+  color: #000000;
+  transition: all 1s ease;
+}
+.formsubmit:hover {
+  scale: 1.2;
+  background-color: #c12ce9;
   color: #f6f6f6;
 }
-
 .menu {
   background-color: #747474;
   width: 80%;
@@ -170,6 +177,7 @@ html {
   border-radius: 20px;
   padding: 5px 10px;
   border: 1px solid #c12ce9;
+  transition: all 1s ease;
 }
 #id_lunch div label {
   width: 100%;
