@@ -21,7 +21,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -30,7 +30,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],
@@ -45,7 +45,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -54,7 +54,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],
@@ -69,7 +69,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -78,7 +78,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],
@@ -93,7 +93,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -102,7 +102,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],
@@ -117,7 +117,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -126,7 +126,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],
@@ -141,7 +141,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -150,7 +150,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],
@@ -165,7 +165,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
         "Snacks",
@@ -174,7 +174,7 @@ menu = [
         [
             ["dal.jpeg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "Chapati"],
+            ["roti.jpeg", "roti"],
             ["sabji.jpeg", "Sabji"],
         ],
     ],

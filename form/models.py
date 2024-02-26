@@ -7,6 +7,13 @@ options = (
 )
 
 
+class Values(models.Model):
+    date = models.DateField(auto_now_add=True)
+    lunch = models.IntegerField()
+    dinner = models.IntegerField()
+    total = models.IntegerField()
+
+
 class Details(models.Model):
     email = models.CharField(max_length=254)
     date = models.DateField(auto_now_add=True)
