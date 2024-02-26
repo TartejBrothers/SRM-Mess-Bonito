@@ -1,6 +1,6 @@
 from import_export.admin import ImportExportModelAdmin
 from django.contrib import admin
-from .models import Details
+from .models import Details, Values
 
 
 class DetailsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -17,3 +17,4 @@ class DetailsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 
 admin.site.register(Details, DetailsAdmin)
+admin.site.register(Values)
