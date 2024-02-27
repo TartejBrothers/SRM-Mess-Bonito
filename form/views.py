@@ -5,14 +5,14 @@ from .quotes import get_random_quote
 from .models import Details, Values
 import seaborn as sns
 import matplotlib
-
+import numpy as np
 matplotlib.use("agg")
 import matplotlib.pyplot as plt
 
 import pandas as pd
 from io import BytesIO
 import base64
-from datetime import datetime
+from datetime import datetime, timedelta
 import threading
 
 day = datetime.now().weekday()
@@ -190,27 +190,32 @@ menu = [
 
 
 def generate_plot_and_save(values_data):
-    dates = [value.date for value in values_data]
+    dates = [
+        value.date.strftime("%Y-%m-%d") for value in values_data
+    ]  # Convert date objects to strings
     lunch_values = [value.lunch for value in values_data]
     dinner_values = [value.dinner for value in values_data]
     total_values = [value.total for value in values_data]
 
     plt.figure(figsize=(10, 6))
 
+    bar_width = 0.25  # width of the bars
+    index = np.arange(len(dates))  # the x locations for the groups
+
     # Plot lunch values
-    plt.plot(dates, lunch_values, label="Lunch")
+    plt.bar(index, lunch_values, bar_width, label="Lunch")
 
     # Plot dinner values
-    plt.plot(dates, dinner_values, label="Dinner")
+    plt.bar(index + bar_width, dinner_values, bar_width, label="Dinner")
 
     # Plot total values
-    plt.plot(dates, total_values, label="Total")
+    plt.bar(index + 2 * bar_width, total_values, bar_width, label="Total")
 
     # Add labels and legend
     plt.title("Lunch, Dinner, and Total Values Over Time")
     plt.xlabel("Date")
     plt.ylabel("Value")
-    plt.xticks(rotation=45)
+    plt.xticks(index + bar_width, dates, rotation=45)
     plt.legend()
 
     plt.tight_layout()
