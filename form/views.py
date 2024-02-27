@@ -2,9 +2,18 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import add_data
 from .quotes import get_random_quote
-from .models import Details
+from .models import Details, Values
+import seaborn as sns
+import matplotlib
 
+matplotlib.use("agg")
+import matplotlib.pyplot as plt
+
+import pandas as pd
+from io import BytesIO
+import base64
 from datetime import datetime
+import threading
 
 day = datetime.now().weekday()
 
@@ -178,6 +187,55 @@ menu = [
         ],
     ],
 ]
+
+
+def generate_plot_and_save(values_data):
+    dates = [value.date for value in values_data]
+    lunch_values = [value.lunch for value in values_data]
+    dinner_values = [value.dinner for value in values_data]
+    total_values = [value.total for value in values_data]
+
+    df = pd.DataFrame(
+        {
+            "Date": dates,
+            "Lunch": lunch_values,
+            "Dinner": dinner_values,
+            "Total": total_values,
+        }
+    )
+
+    plt.figure(figsize=(10, 6))
+    ax = plt.subplot(111, frame_on=False)  # No visible frame
+    ax.xaxis.set_visible(False)  # Hide x-axis
+    ax.yaxis.set_visible(False)  # Hide y-axis
+
+    table = ax.table(cellText=df.values, colLabels=df.columns, loc="center")
+
+    table.auto_set_font_size(False)
+    table.set_fontsize(12)
+    table.scale(1.2, 1.2)  # Increase table size
+
+    plt.title("Lunch, Dinner, and Total Values Over Time")
+    plt.tight_layout()
+
+    buffer = BytesIO()
+    plt.savefig(buffer, format="png")
+    buffer.seek(0)
+
+    plot_data = base64.b64encode(buffer.getvalue()).decode("utf-8")
+    buffer.close()
+
+    return plot_data
+
+
+# Define the view function
+def plot_matplotlib_table(request):
+    values_data = Values.objects.all()
+
+    # Call the function to generate and save the plot
+    plot_data = generate_plot_and_save(values_data)
+
+    return render(request, "plot_template.html", {"plot_data": plot_data})
 
 
 def index(request):

@@ -10,6 +10,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("success/", views.success, name="success"),
     path("results/", views.results, name="results"),
+    path("plot/", views.plot_matplotlib_table, name="plot"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
