@@ -195,27 +195,24 @@ def generate_plot_and_save(values_data):
     dinner_values = [value.dinner for value in values_data]
     total_values = [value.total for value in values_data]
 
-    df = pd.DataFrame(
-        {
-            "Date": dates,
-            "Lunch": lunch_values,
-            "Dinner": dinner_values,
-            "Total": total_values,
-        }
-    )
-
     plt.figure(figsize=(10, 6))
-    ax = plt.subplot(111, frame_on=False)  # No visible frame
-    ax.xaxis.set_visible(False)  # Hide x-axis
-    ax.yaxis.set_visible(False)  # Hide y-axis
 
-    table = ax.table(cellText=df.values, colLabels=df.columns, loc="center")
+    # Plot lunch values
+    plt.plot(dates, lunch_values, label="Lunch")
 
-    table.auto_set_font_size(False)
-    table.set_fontsize(12)
-    table.scale(1.2, 1.2)  # Increase table size
+    # Plot dinner values
+    plt.plot(dates, dinner_values, label="Dinner")
 
+    # Plot total values
+    plt.plot(dates, total_values, label="Total")
+
+    # Add labels and legend
     plt.title("Lunch, Dinner, and Total Values Over Time")
+    plt.xlabel("Date")
+    plt.ylabel("Value")
+    plt.xticks(rotation=45)
+    plt.legend()
+
     plt.tight_layout()
 
     buffer = BytesIO()
@@ -229,7 +226,7 @@ def generate_plot_and_save(values_data):
 
 
 # Define the view function
-def plot_matplotlib_table(request):
+def plot_matplotlib_graph(request):
     values_data = Values.objects.all()
 
     # Call the function to generate and save the plot
