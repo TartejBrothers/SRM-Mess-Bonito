@@ -2,9 +2,18 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import add_data
 from .quotes import get_random_quote
-from .models import Details
+from .models import Details, Values
+import seaborn as sns
+import matplotlib
 
+matplotlib.use("agg")
+import matplotlib.pyplot as plt
+
+import pandas as pd
+from io import BytesIO
+import base64
 from datetime import datetime
+import threading
 
 day = datetime.now().weekday()
 
@@ -178,6 +187,52 @@ menu = [
         ],
     ],
 ]
+
+
+def generate_plot_and_save(values_data):
+    dates = [value.date for value in values_data]
+    lunch_values = [value.lunch for value in values_data]
+    dinner_values = [value.dinner for value in values_data]
+    total_values = [value.total for value in values_data]
+
+    plt.figure(figsize=(10, 6))
+
+    # Plot lunch values
+    plt.plot(dates, lunch_values, label="Lunch")
+
+    # Plot dinner values
+    plt.plot(dates, dinner_values, label="Dinner")
+
+    # Plot total values
+    plt.plot(dates, total_values, label="Total")
+
+    # Add labels and legend
+    plt.title("Lunch, Dinner, and Total Values Over Time")
+    plt.xlabel("Date")
+    plt.ylabel("Value")
+    plt.xticks(rotation=45)
+    plt.legend()
+
+    plt.tight_layout()
+
+    buffer = BytesIO()
+    plt.savefig(buffer, format="png")
+    buffer.seek(0)
+
+    plot_data = base64.b64encode(buffer.getvalue()).decode("utf-8")
+    buffer.close()
+
+    return plot_data
+
+
+# Define the view function
+def plot_matplotlib_graph(request):
+    values_data = Values.objects.all()
+
+    # Call the function to generate and save the plot
+    plot_data = generate_plot_and_save(values_data)
+
+    return render(request, "plot_template.html", {"plot_data": plot_data})
 
 
 def index(request):

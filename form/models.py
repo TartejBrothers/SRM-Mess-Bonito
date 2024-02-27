@@ -25,8 +25,7 @@ class Details(models.Model):
     def save(self, *args, **kwargs):
         self.date = datetime.now().date()
         last_record = Details.objects.last()
-        # if last_record and last_record.date != self.date:
-        if last_record and last_record.time != self.time:
+        if last_record and last_record.date != self.date:
             results_data = results()
             Values.objects.update_or_create(
                 date=results_data["date"],
