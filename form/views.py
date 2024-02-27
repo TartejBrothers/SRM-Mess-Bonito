@@ -1,8 +1,7 @@
-# form/views.py
 from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import add_data
 from .quotes import get_random_quote
-from django.http import HttpResponse, HttpResponseRedirect, request
 from .models import Details
 
 from datetime import datetime
