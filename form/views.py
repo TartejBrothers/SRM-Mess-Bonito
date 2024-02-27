@@ -6,6 +6,7 @@ from .models import Details, Values
 import seaborn as sns
 import matplotlib
 import numpy as np
+
 matplotlib.use("agg")
 import matplotlib.pyplot as plt
 
@@ -190,28 +191,18 @@ menu = [
 
 
 def generate_plot_and_save(values_data):
-    dates = [
-        value.date.strftime("%Y-%m-%d") for value in values_data
-    ]  # Convert date objects to strings
+    dates = [value.date.strftime("%Y-%m-%d") for value in values_data]
     lunch_values = [value.lunch for value in values_data]
     dinner_values = [value.dinner for value in values_data]
     total_values = [value.total for value in values_data]
 
     plt.figure(figsize=(10, 6))
 
-    bar_width = 0.25  # width of the bars
-    index = np.arange(len(dates))  # the x locations for the groups
-
-    # Plot lunch values
+    bar_width = 0.25
+    index = np.arange(len(dates))
     plt.bar(index, lunch_values, bar_width, label="Lunch")
-
-    # Plot dinner values
     plt.bar(index + bar_width, dinner_values, bar_width, label="Dinner")
-
-    # Plot total values
     plt.bar(index + 2 * bar_width, total_values, bar_width, label="Total")
-
-    # Add labels and legend
     plt.title("Lunch, Dinner, and Total Values Over Time")
     plt.xlabel("Date")
     plt.ylabel("Value")
@@ -230,14 +221,11 @@ def generate_plot_and_save(values_data):
     return plot_data
 
 
-# Define the view function
 def plot_matplotlib_graph(request):
     values_data = Values.objects.all()
-
-    # Call the function to generate and save the plot
     plot_data = generate_plot_and_save(values_data)
 
-    return render(request, "plot_template.html", {"plot_data": plot_data})
+    return render(request, "plot.html", {"plot_data": plot_data})
 
 
 def index(request):
