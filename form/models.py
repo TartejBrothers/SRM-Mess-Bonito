@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import datetime
 from django.db.models import Count, Q
+from django.utils import timezone
+from django.db.models import F
 
 options = (
     ("Yes", "Yes"),
@@ -9,7 +11,7 @@ options = (
 
 
 class Values(models.Model):
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField()
     lunch = models.IntegerField()
     dinner = models.IntegerField()
     total = models.IntegerField()
@@ -27,43 +29,40 @@ class Details(models.Model):
         last_record = Details.objects.last()
         if last_record and last_record.date != self.date:
             results_data = results()
-            Values.objects.update_or_create(
-                date=results_data["date"],
-                defaults={
-                    "lunch": results_data["lunch"],
-                    "dinner": results_data["dinner"],
-                    "total": results_data["total"],
-                },
-            )
+            if results_data:
+                Values.objects.update_or_create(
+                    date=results_data["date"],
+                    defaults={
+                        "lunch": results_data.get("lunch", 0),
+                        "dinner": results_data.get("dinner", 0),
+                        "total": results_data.get("total", 0),
+                    },
+                )
             Details.objects.all().delete()
         super().save(*args, **kwargs)
 
 
 def results():
     last_record = Details.objects.last()
-    if last_record and last_record.date != datetime.now().date():
-
-        lunch_counts = Details.objects.values("date").annotate(
-            lunch_count=Count("pk", filter=Q(lunch="Yes"))
-        )
-        dinner_counts = Details.objects.values("date").annotate(
-            dinner_count=Count("pk", filter=Q(dinner="Yes"))
-        )
+    if last_record and last_record.date != timezone.now().date():
+        lunch_count = Details.objects.filter(lunch="Yes").count()
+        dinner_count = Details.objects.filter(dinner="Yes").count()
+        print("Counts=", lunch_count, dinner_count)
         num_rows = Details.objects.count()
-        for lunch_data, dinner_data in zip(lunch_counts, dinner_counts):
-            date = lunch_data["date"]
-            lunch_count = lunch_data["lunch_count"]
-            dinner_count = dinner_data["dinner_count"]
-            total_count = num_rows
-            date = datetime.strptime(date, "%Y-%m-%d").date()
 
-            # Save the Values object
-            Values.objects.update_or_create(
-                date=date,
-                defaults={
-                    "lunch": lunch_count,
-                    "dinner": dinner_count,
-                    "total": total_count,
-                },
-            )
+        last_date_record = Details.objects.order_by("-date").first()
+        if last_date_record:
+            last_date = last_date_record.date
+            print("Last Date:", last_date)
+        else:
+            print("No records found")
+            return {}
+
+        total_count = num_rows
+        return {
+            "date": last_date,
+            "lunch": lunch_count,
+            "dinner": dinner_count,
+            "total": total_count,
+        }
     return {}
