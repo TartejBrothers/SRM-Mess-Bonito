@@ -16,5 +16,26 @@ class DetailsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     get_dinner.short_description = "Dinner"
 
 
+class ValuesAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    list_display = ("date", "lunch", "dinner", "total")
+
+    def get_date(self, obj):
+        return obj.date
+
+    def get_lunch(self, obj):
+        return obj.lunch
+
+    def get_dinner(self, obj):
+        return obj.dinner
+
+    def get_total(self, obj):
+        return obj.total
+
+    get_date.short_description = "Date"
+    get_lunch.short_description = "Lunch"
+    get_dinner.short_description = "Dinner"
+    get_total.short_description = "Total"
+
+
 admin.site.register(Details, DetailsAdmin)
 admin.site.register(Values)
