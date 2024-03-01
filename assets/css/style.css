@@ -2,30 +2,32 @@
 @import url(https://db.onlinewebfonts.com/c/b851561fd22deabc04e65e994e257e51?family=Pragmatica+W01+Extended);
 html {
   scroll-behavior: smooth;
-  background: rgb(252, 11, 235);
+  background-color: rgb(0, 43, 98);
   background: -moz-linear-gradient(
-    149deg,
-    rgba(252, 11, 235, 1) 0%,
-    rgba(25, 142, 251, 1) 100%
+    90deg,
+    rgba(0, 43, 98, 1) 0%,
+    rgba(138, 11, 173, 1) 100%
   );
   background: -webkit-linear-gradient(
-    149deg,
-    rgba(252, 11, 235, 1) 0%,
-    rgba(25, 142, 251, 1) 100%
+    90deg,
+    rgba(0, 43, 98, 1) 0%,
+    rgba(138, 11, 173, 1) 100%
   );
   background: linear-gradient(
-    149deg,
-    rgba(252, 11, 235, 1) 0%,
-    rgba(25, 142, 251, 1) 100%
+    90deg,
+    rgba(0, 43, 98, 1) 0%,
+    rgba(138, 11, 173, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fc0beb",endColorstr="#198efb",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#002b62",endColorstr="#8a0bad",GradientType=1);
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* font-family: "Pragmatica W01 Extended"; */
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 .header {
   display: flex;
