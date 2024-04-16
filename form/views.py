@@ -17,174 +17,216 @@ from datetime import datetime, timedelta
 import threading
 
 day = datetime.now().weekday()
-
 menu = [
     [
         "Breakfast",
         [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
+            ["Easy strawberry jam.jpeg", "Bread/Butter"],
+            ["Kodo Millet Dosa _ Varagu arisi dosa.jpeg", "Millet dosa"],
+            ["Podi idli is a quick and easy snack from South India.jpg", "Idly Podi"],
+            ["Chapati Breads.jpeg", "Chapati"],
+            ["Khurmi - Chhattisgarh.jpeg", "White Khururna"],
+            ["Boiled Egg.jpg", "Boiled egg"],
+            [
+                "Download Cup of coffee on glass table on white background_ for free.jpg",
+                "Tea/coffee/milk",
+            ],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "sambhar/oil",
+            ],
         ],
         "Lunch",
         [
-            ["dal.jpeg", "Dal"],
+            ["Dal Tadka Recipe.jpg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
+            ["Chapati Breads.jpeg", "chapati"],
+            ["Rajma Recipe _ Rajma Masala.jpg", "rajma masala"],
+            ["pulao.jpg", "Jeera pulao"],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "Arachivitta sambar",
+            ],
+            ["bagara dal.jpg", "Panchratna Dal"],
+            [
+                "White Peas Potato Curry Recipe - Vatana Aloo Masala Recipe.jpg",
+                "Drumstick Brinjal Mochai",
+            ],
+            ["Aloo Bhaji [Indian Spiced Potatoes].jpg", "Dum aloo"],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "Pineapple Rasam",
+            ],
+            ["What Are The Benefits Of Buttermilk_.jpg", "Butter Milk"],
         ],
         "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
+        [
+            [
+                "Download Cup of coffee on glass table on white background_ for free.jpg",
+                "Tea/Coffee",
+            ],
+            ["Pav Bhaji.jpg", "Pav Bhaji"],
+        ],
         "Dinner",
         [
-            ["dal.jpeg", "Dal"],
+            ["Dal Tadka Recipe.jpg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
+            ["Chapati Breads.jpeg", "Chapati"],
+            ["veg jhal pyaza.jpg", "Sabji"],
+            ["madras paratha.jpg", "Madras Paratha"],
+            [
+                "Matar Paneer Recipe (Easy, Healthy Punjabi Mutter Paneer Masala).jpg",
+                "Mattar panner Masala",
+            ],
+            ["Podi idli is a quick and easy snack from South India.jpg", "Idli podi"],
+            [
+                "Coconut Chutney Recipe _ Easy Chutney Recipe and Tips to select a good coconut.jpg",
+                "Special chutney",
+            ],
+            ["bagara dal.jpg", "Hara Moong dal"],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "Sambhar/rasam",
+            ],
+            [
+                "Banana fruit close up stock vector_ Illustration of farm - 57102709.jpg",
+                "fish gravy/banana",
+            ],
+            ["milk.jpeg", "milk"],
         ],
     ],
     [
         "Breakfast",
         [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
+            ["Easy strawberry jam.jpeg", "bread/butter/jam"],
+            [
+                "Download Cup of coffee on glass table on white background_ for free.jpg",
+                "Tea/coffee/milk",
+            ],
+            [
+                "Coconut Chutney Recipe _ Easy Chutney Recipe and Tips to select a good coconut.jpg",
+                "Poori/chutney",
+            ],
+            ["Veg Semiya Khichdi.jpg", "Semia Veg Kichadi"],
+            ["Aloo Matar (Aloo Mattar).jpg", "Dal allo masala"],
         ],
         "Lunch",
         [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
+            ["sweets.jpg", "sweet"],
+            ["Chapati Breads.jpeg", "Millet Chapati"],
+            ["curry.jpeg", "Meal curry"],
+            ["pulao.jpg", "Bahara Pulao"],
+            ["curd rice.jpg", "Rice/Curd rice/Steamed rice"],
+            ["Dal Tadka Recipe.jpg", "Dal fry"],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "Tamoto Rasam",
+            ],
+            ["pickle.jpeg", "Urulai Peas Roasted Pickels"],
         ],
         "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
+        [
+            [
+                "Download Cup of coffee on glass table on white background_ for free.jpg",
+                "Tea/Coffee",
+            ],
+            ["Mysore Bonda _ Mysore Bajji _ Bonda Recipe.jpg", "Mysore Bonda"],
+        ],
         "Dinner",
         [
-            ["dal.jpeg", "Dal"],
+            ["madras paratha.jpg", "Punjabi Paratha"],
+            [
+                "Easy Chana Masala Recipe In Pressure cooker – How To Make Chana Masala Recipe (1).jpg",
+                "Black Chenna",
+            ],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
+            ["chilli ghobi.jpeg", "Chilli Gobi Dry"],
+            [
+                "Plain Dosa Recipe _ How to make dosa for beginners • Chakris Kitchen.jpg",
+                "Millet Dosa",
+            ],
+            ["Podi idli is a quick and easy snack from South India.jpg", "Idly Podi"],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "Pepper rasam",
+            ],
+            [
+                "Banana fruit close up stock vector_ Illustration of farm - 57102709.jpg",
+                "Milok/fruit",
+            ],
+            [
+                "Mutton curry recipe _ south Indian Mutton gravy Jinoo's Kitchen.jpg",
+                "Mutton Gravy",
+            ],
         ],
     ],
     [
         "Breakfast",
         [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
+            ["Easy strawberry jam.jpeg", "Bread/butter/jam"],
+            [
+                "Download Cup of coffee on glass table on white background_ for free.jpg",
+                "Tea/coffee",
+            ],
+            ["poha.jpeg", "Poha"],
+            [
+                "Premium Photo _ Idly or idli south indian main breakfast item which is beautifully arranged in a fresh green banana leaf on white background.jpg",
+                "Millet Idly",
+            ],
+            ["Podi idli is a quick and easy snack from South India.jpg", "Idly podi"],
+            [
+                "Organic SAMBHAR MASALA - Curry Masala - Sambaar Masala.jpeg",
+                "Sambar/Mint chutney",
+            ],
+            ["Indian Masala Omelette Recipe.jpg", "Masala Omlet"],
         ],
         "Lunch",
         [
-            ["dal.jpeg", "Dal"],
+            ["Chapati Breads.jpeg", "Millet Chapati"],
+            ["Dal Tadka Recipe.jpg", "Dal"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
+            ["veg curry.jpg", "Curry"],
+            ["pulao.jpg", "Pudina pulao"],
+            ["bagara dal.jpg", "Dal"],
+            ["bagara dal.jpg", "Rice"],
+            ["Sambar Recipe.jpeg", "Sambar"],
+            [
+                "Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg",
+                "Tomato rasam",
+            ],
+            ["pickle.jpeg", "Nellikai Thokku"],
+            [
+                "Mutton curry recipe _ south Indian Mutton gravy Jinoo's Kitchen.jpg",
+                "mutton gravy",
+            ],
         ],
         "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
+        [
+            [
+                "Download Cup of coffee on glass table on white background_ for free.jpg",
+                "Tea/Coffee",
+            ],
+            [
+                "Oats idli - How to make oats idli _ Healthy breakfast recipe - YouTube.jpg",
+                "Oats Idli",
+            ],
+            ["bun.jpg", "Bun/Salna"],
+        ],
         "Dinner",
         [
-            ["dal.jpeg", "Dal"],
+            ["madras paratha.jpg", "Punjabi Paratha"],
             ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-    ],
-    [
-        "Breakfast",
-        [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
-        ],
-        "Lunch",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-        "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
-        "Dinner",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-    ],
-    [
-        "Breakfast",
-        [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
-        ],
-        "Lunch",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-        "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
-        "Dinner",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-    ],
-    [
-        "Breakfast",
-        [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
-        ],
-        "Lunch",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-        "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
-        "Dinner",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-    ],
-    [
-        "Breakfast",
-        [
-            ["roti.jpeg", "Roti"],
-            ["tea.jpeg", "Tea"],
-            ["coffee.jpeg", "Coffee"],
-        ],
-        "Lunch",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
-        ],
-        "Snacks",
-        [["tea.jpeg", "Tea"], ["coffee.jpeg", "Coffee"], ["bread.jpeg", "Bread"]],
-        "Dinner",
-        [
-            ["dal.jpeg", "Dal"],
-            ["rice.jpeg", "Rice"],
-            ["roti.jpeg", "roti"],
-            ["sabji.jpeg", "Sabji"],
+            ["veg curry.jpg", "Sabji"],
+            ["Pepper Rasam Recipe (Milagu Rasam) - Spice Up The Curry.jpg", "Kollu"],
+            ["madras paratha.jpg", "Madras paratha"],
+            ["egg-masala-dosa_01.jpg", "Millet Dosa"],
+            ["Sweet_Corn_Sundal_1.jpg", "Sweet Corn Sundal"],
+            [
+                "Banana fruit close up stock vector_ Illustration of farm - 57102709.jpg",
+                "Fruits",
+            ],
+            ["paneer.jpg", "Paneer Gravy"],
+            ["rasam.jpg", "Rasam"],
         ],
     ],
 ]
@@ -224,7 +266,6 @@ def generate_plot_and_save(values_data):
 def plot_matplotlib_graph(request):
     values_data = Values.objects.all()
     plot_data = generate_plot_and_save(values_data)
-
     return render(request, "plot.html", {"plot_data": plot_data})
 
 
