@@ -16,6 +16,11 @@ class Values(models.Model):
     dinner = models.IntegerField(default=0)
     total = models.IntegerField(default=0)
 
+class Wasteage(models.Model):
+    date = models.DateField(unique=True)
+    lunch = models.IntegerField(default=0)
+    dinner = models.IntegerField(default=0)
+    total = models.IntegerField(default=0)
 
 class Details(models.Model):
     email = models.CharField(max_length=254)
