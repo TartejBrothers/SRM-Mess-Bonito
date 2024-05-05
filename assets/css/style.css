@@ -154,17 +154,17 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border: 1px solid #ff4e39;
   color: #000000;
   overflow: hidden;
-
+  padding-bottom: 10px;
   background-color: #f6f6f6;
 }
 .menu ul li img {
   width: 100%;
-  height: 65px;
+  height: 150px;
   object-fit: cover;
 }
 .horizontal-radio {
