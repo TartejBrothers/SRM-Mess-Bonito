@@ -3,7 +3,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .forms import add_data
 from .quotes import get_random_quote
 from .models import Details, Values
-import seaborn as sns
 import matplotlib
 import numpy as np
 
